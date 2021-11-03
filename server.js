@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 app.use(requireHTTPS);
 
-app.use(express.static('./dist/assignment-one-frontend'));
+app.use(express.static('./assignment-one-frontend/dist/assignment-one-frontend'));
 
 app.get('/*', function (req, res) {
     res.sendFile('index.html', { root: './assignment-one-frontend/dist/assignment-one-frontend/' }
