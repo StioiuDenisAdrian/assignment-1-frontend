@@ -1,0 +1,10 @@
+<p *ngIf="isAuthenticated">
+  <mat-toolbar color="primary">
+    <span>Menu</span>
+    <span class="profile-section" (click)="navigateToMyProfile()">My profile</span>
+    <span *ngIf="isClient" (click)="navigateToMyDevices()" class="profile-section">My devices</span>
+    <span *ngIf="isManager" (click)="navigateToUsersDashboard()" class="profile-section">Users</span>
+    <span class="spacer"></span>
+    <span class="logout" (click)="logout()">Logout</span>
+</mat-toolbar>
+</p>

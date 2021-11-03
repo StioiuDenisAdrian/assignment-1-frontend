@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AccountService } from './accounts/services/accounts.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'assignment-one-frontend';
+  title = 'energy-platform';
+
+  
+
+  constructor(){
+
+  }
 }

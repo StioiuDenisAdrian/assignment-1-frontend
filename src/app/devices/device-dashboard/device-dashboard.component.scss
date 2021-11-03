@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    padding-left: 15px;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  .positioning{
+     margin-bottom: 50px;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  mat-icon{
+      &:hover{
+          cursor: pointer;
+      }
+  }

@@ -1,0 +1,64 @@
+<div>
+   
+    <mat-form-field>
+      <mat-label>Device name</mat-label>
+      <input
+      [disabled]="isClient"
+        matInput
+        type="text"
+        required
+        [(ngModel)]="data.deviceName"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Sensor name</mat-label>
+      <input
+      [disabled]="isClient"
+        matInput
+        type="text"
+        required
+        [(ngModel)]="data.sensorName"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </mat-form-field>
+       
+</div>
+
+<div>
+   
+    <mat-form-field>
+      <mat-label>Sensor description</mat-label>
+      <input
+      [disabled]="isClient"
+        matInput
+        type="text"
+        required
+        [(ngModel)]="data.sensorDescription"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Maximum value</mat-label>
+      <input
+      [disabled]="isClient"
+        matInput
+        type="text"
+        required
+        [(ngModel)]="data.mAximumValue"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </mat-form-field>
+       
+</div>
+<div>
+  <button mat-button *ngIf="!isClient" color="primary" (click)="save()" class="btn btn-success">
+    Save
+  </button>
+
+  <button mat-button color="primary" (click)="close()" class="btn btn-success">
+    Close
+  </button>
+</div>
