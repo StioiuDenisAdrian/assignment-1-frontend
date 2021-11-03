@@ -67,7 +67,7 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
-        allowedDomains: ["localhost:44356", "localhost:4200"],
+        allowedDomains: ["https://assignment-1-frontend.herokuapp.com/", "https://assignment-1-backend-denis.herokuapp.com/"],
         disallowedRoutes:[]
       }
     })
