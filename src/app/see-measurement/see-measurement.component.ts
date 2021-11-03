@@ -8,8 +8,8 @@ import {
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MeasurementModel } from './models/measurement.model';
 import { MeasurementService } from './services/measurement.service';
-import { ChartDataset, ChartOptions } from 'chart.js';
-import { Colors, Label } from 'ng2-charts';
+import { ChartDataSets, ChartOptions } from 'chart.js';
+import { Colors, Label } from 'ng2-charts/ng2-charts';
 
 @Component({
   selector: 'app-see-measurement',
@@ -19,12 +19,12 @@ import { Colors, Label } from 'ng2-charts';
 export class SeeMeasurementComponent implements OnInit {
   public timeStamp: string;
 
-  public lineChartData: ChartDataset[]=[{data:[], label: 'Historical consumption'}];;
+  public lineChartData: ChartDataSets[]=[{data:[], label: 'Historical consumption'}];;
   public lineChartLabels: Label[]=[];
   public lineChartOptions: (ChartOptions) = {
     responsive: true,
   };
-  public lineChartColors: any[] = [
+  public lineChartColors: Colors[] = [
     {
       borderColor: 'black',
       backgroundColor: 'rgba(255,0,0,0.3)',
