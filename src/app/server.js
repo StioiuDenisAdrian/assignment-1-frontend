@@ -12,7 +12,7 @@ app.use(requireHTTPS);
 app.use(express.static('./dist/assignment-one-frontend'));
 
 app.get('/*', function (req, res) {
-    res.sendFile('index.html', { root: '.assignment-one-frontend/dist/assignment-one-frontend/' }
+    res.sendFile('index.html', { root: './assignment-one-frontend/dist/assignment-one-frontend/' }
     );
 });
 
