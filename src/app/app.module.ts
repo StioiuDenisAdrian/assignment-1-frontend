@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -34,6 +34,7 @@ import { DeviceDashboardComponent } from './devices/device-dashboard/device-dash
 import { EditDeviceComponent } from './devices/edit-device/edit-device.component';
 import { SeeMeasurementComponent } from './see-measurement/see-measurement.component';
 import { ChartsModule } from 'ng2-charts';
+import { TokenInterceptor } from './accounts/services/http-interceptor.service';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -73,7 +74,13 @@ export function tokenGetter() {
     })
   ],
   
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:  TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
