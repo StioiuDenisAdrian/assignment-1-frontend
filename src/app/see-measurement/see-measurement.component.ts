@@ -48,14 +48,12 @@ export class SeeMeasurementComponent implements OnInit {
     this.measurementService
       .getMeasurements(this.data, this.timeStamp)
       .subscribe((measurments) => {
-        console.log(measurments);
         for(let measurement of measurments){
           values.push(measurement.kwh);
           labels.push(measurement.timeStamp);
         }
         this.lineChartData = [{data:values, label: 'Historical consumption'}];
         this.lineChartLabels = labels;
-        console.log(this.lineChartData);
       });
 
   }

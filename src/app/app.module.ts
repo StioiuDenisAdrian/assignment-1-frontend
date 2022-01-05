@@ -35,13 +35,14 @@ import { EditDeviceComponent } from './devices/edit-device/edit-device.component
 import { SeeMeasurementComponent } from './see-measurement/see-measurement.component';
 import { ChartsModule } from 'ng2-charts';
 import { TokenInterceptor } from './accounts/services/http-interceptor.service';
+import { NotificationComponent } from './notification/notification/notification.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
 }
 
 @NgModule({
-  declarations: [AppComponent, RegisterUserComponent, LoginComponent, ForbiddenComponent, MenuComponent, MyProfileComponent, UserDashboardComponent, EditUserComponent, DeviceDashboardComponent, EditDeviceComponent, SeeMeasurementComponent],
+  declarations: [AppComponent, RegisterUserComponent, LoginComponent, ForbiddenComponent, MenuComponent, MyProfileComponent, UserDashboardComponent, EditUserComponent, DeviceDashboardComponent, EditDeviceComponent, SeeMeasurementComponent, NotificationComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
