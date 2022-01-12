@@ -7,6 +7,7 @@ import { ClientGuard } from './accounts/services/client-guard.service';
 import { AuthGuard } from './accounts/services/guard.service';
 import { DeviceDashboardComponent } from './devices/device-dashboard/device-dashboard.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { HistoricalConsumptionComponent } from './historical-consumption/historical-consumption.component';
 import { MenuComponent } from './menu/menu.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
@@ -33,8 +34,13 @@ const routes: Routes = [
   {
     path: 'my-devices',
     component: DeviceDashboardComponent,
-    canActivate: [AuthGuard, ClientGuard],
+    canActivate: [AuthGuard, ClientGuard]
   },
+  {
+    path:'historical-consumption',
+    component: HistoricalConsumptionComponent,
+    canActivate:[AuthGuard,ClientGuard],
+  }
 ];
 
 @NgModule({

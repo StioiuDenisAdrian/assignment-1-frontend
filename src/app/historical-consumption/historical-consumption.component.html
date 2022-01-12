@@ -1,0 +1,38 @@
+<input type="number" class="form-control" [(ngModel)]="numberOfDays" name="home" required min="0" step="1">
+
+
+  <button mat-button  color="primary" (click)="sendData()" class="btn btn-success">
+    Show
+  </button>
+
+<div style="display: block">
+    <canvas
+      baseChart
+      width="1000"
+      height="1000"
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [legend]="lineChartLegend"
+      [chartType]="lineChartType"
+      [plugins]="lineChartPlugins"
+    >
+    </canvas>
+  </div>
+
+  <div style="display: block">
+    <canvas
+      baseChart
+      width="1000"
+      height="1000"
+      [datasets]="lineChartDataBaseline"
+      [labels]="lineChartLabelsBaseline"
+      [options]="lineChartOptionsBaseline"
+      [colors]="lineChartColorsBaseline"
+      [legend]="lineChartLegendBaseline"
+      [chartType]="lineChartTypeBaseline"
+      [plugins]="lineChartPluginsBaseline"
+    >
+    </canvas>
+  </div>

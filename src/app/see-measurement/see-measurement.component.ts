@@ -45,6 +45,7 @@ export class SeeMeasurementComponent implements OnInit {
   seeMeasurements(): void {
     var values: number[] = [];
     var labels: string[] = [];
+
     this.measurementService
       .getMeasurements(this.data, this.timeStamp)
       .subscribe((measurments) => {

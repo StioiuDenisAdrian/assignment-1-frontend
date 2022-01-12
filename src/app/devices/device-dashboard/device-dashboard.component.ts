@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { UserModel } from 'src/app/accounts/models/user.model';
 import { AccountService } from 'src/app/accounts/services/accounts.service';
 import { SeeMeasurementComponent } from 'src/app/see-measurement/see-measurement.component';
@@ -34,7 +35,8 @@ export class DeviceDashboardComponent implements OnInit,AfterViewInit {
     'deviceName',
     'maximumValue',
     'edit',
-    'seeMeasurements'
+    'seeMeasurements',
+    "seeHistoricalConsumption"
   ]
   userData: any;
   length: number;
@@ -46,7 +48,8 @@ export class DeviceDashboardComponent implements OnInit,AfterViewInit {
   constructor(
     private readonly deviceService: DeviceService,
     private readonly accountService: AccountService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
@@ -117,5 +120,9 @@ export class DeviceDashboardComponent implements OnInit,AfterViewInit {
       width: '700px',
       data: deviceId
     });
+  }
+
+  historicalConsumption(deviceId: string): void{
+    this.router.navigateByUrl("historical-consumption?deviceId="+deviceId);
   }
 }
